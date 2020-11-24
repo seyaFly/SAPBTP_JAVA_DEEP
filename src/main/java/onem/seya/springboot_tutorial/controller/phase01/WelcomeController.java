@@ -1,4 +1,4 @@
-package onem.seya.springboot_tutorial.controller.lesson01;
+package onem.seya.springboot_tutorial.controller.phase01;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

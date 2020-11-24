@@ -1,6 +1,6 @@
 package onem.seya.springboot_tutorial;
 
-import onem.seya.springboot_tutorial.controller.lesson01.WelcomeController;
+import onem.seya.springboot_tutorial.controller.phase01.WelcomeController;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +22,7 @@ class SpringbootTutorialApplicationTests {
      *打印欢迎消息
      */
     @Test
-    void testHelloWordController() throws Exception {
+    void testWelcomeController() throws Exception {
         mvc.perform(MockMvcRequestBuilders.get("/api/v1/welcome")
                 .accept(MediaType.APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers.status().isOk())
