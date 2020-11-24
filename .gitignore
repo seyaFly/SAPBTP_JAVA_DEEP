@@ -25,6 +25,9 @@
 target/
 #忽略所有.idea目录
 .idea/
+#忽略所有.idea目录
+.mvn/
+
 #忽略所有.iml文件
 *.iml
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
@@ -58,7 +61,3 @@ HELP.md
 build/
 !**/src/main/**/build/
 !**/src/test/**/build/
-
-### VS Code ###
-.vscode/
-

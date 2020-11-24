@@ -1,0 +1,9 @@
+---
+applications:
+  - name: tutorial
+    memory: 800M
+    instances: 1
+    path: target/tutorial.jar
+    env:
+      TARGET_RUNTIME: tomcat
+      SPRING_PROFILES_DEFAULT: cf
