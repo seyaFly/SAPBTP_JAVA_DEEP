@@ -1,4 +1,4 @@
-package onem.seya.springboot_tutorial.config;
+package onem.seya.springboot_tutorial.config.swagger;
 
 import io.swagger.annotations.ApiOperation;
 import org.springframework.context.annotation.Bean;
@@ -33,7 +33,13 @@ public class SwaggerConfig {
 
     @Bean
     public Docket customImplementation(){
+
+        /**
+         * ignored controller method parameter types so that the framework does not generate swagger model
+         */
+
         return new Docket(DocumentationType.SWAGGER_2)
+                .groupName("api/v1")
                 .apiInfo(apiInfo())
                 .select()
                 .apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))

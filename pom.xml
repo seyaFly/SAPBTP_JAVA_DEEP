@@ -16,12 +16,13 @@
 
     <profiles>
         <profile>
-            <id>cf</id>
+            <id>local</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
                 <packaging.type>jar</packaging.type>
+                <activatedProperties>local</activatedProperties>
             </properties>
             <dependencies>
                 <dependency>
@@ -29,11 +30,22 @@
                     <artifactId>spring-boot-starter-logging</artifactId>
                 </dependency>
                 <dependency>
-                    <groupId>org.apache.derby</groupId>
-                    <artifactId>derby</artifactId>
+                    <groupId>com.h2database</groupId>
+                    <artifactId>h2</artifactId>
                     <scope>runtime</scope>
                 </dependency>
             </dependencies>
+        </profile>
+
+        <profile>
+            <id>cf</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <packaging.type>jar</packaging.type>
+                <activatedProperties>cf</activatedProperties>
+            </properties>
         </profile>
     </profiles>
 
@@ -44,11 +56,16 @@
         <junit.version>4.12</junit.version>
         <ngbrc.version>2.3.48</ngbrc.version>
         <swagger.version>2.9.2</swagger.version>
+        <cds.version>1.9.0</cds.version>
     </properties>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -104,6 +121,12 @@
             <version>${ngbrc.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.sap.cds</groupId>
+            <artifactId>cds-feature-cloudfoundry</artifactId>
+            <version>${cds.version}</version>
+        </dependency>
+
         <!-- tomcat is provided on the sap cf-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -112,7 +135,6 @@
         </dependency>
     </dependencies>
     <build>
-        <finalName>tutorial</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
