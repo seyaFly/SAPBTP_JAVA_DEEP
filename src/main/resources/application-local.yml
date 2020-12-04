@@ -1,0 +1,8 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+      naming_strategy: org.hibernate.cfg.EJB3NamingStrategy
+  h2:
+    console:
+      enabled: true

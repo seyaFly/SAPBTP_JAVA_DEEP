@@ -36,7 +36,6 @@
                 </dependency>
             </dependencies>
         </profile>
-
         <profile>
             <id>cf</id>
             <activation>
@@ -90,6 +89,7 @@
             <version>${swagger.version}</version>
         </dependency>
 
+        <!-- Junit Testing -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -104,6 +104,8 @@
             <version>1.2.3.RELEASE</version>
             <scope>runtime</scope>
         </dependency>
+
+        <!-- Used for making the connection with HANA db on cloud -->
         <dependency>
             <groupId>com.sap.hana.cloud</groupId>
             <artifactId>spring-cloud-cloudfoundry-hana-service-connector</artifactId>
@@ -114,7 +116,7 @@
             <artifactId>spring-cloud-spring-service-connector</artifactId>
             <version>1.2.2.RELEASE</version>
         </dependency>
-        <!-- HANA driver -->
+        <!-- SAP HANA JDBC driver. -->
         <dependency>
             <groupId>com.sap.cloud.db.jdbc</groupId>
             <artifactId>ngdbc</artifactId>

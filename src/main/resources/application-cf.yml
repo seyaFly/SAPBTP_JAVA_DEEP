@@ -1,0 +1,15 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+      naming_strategy: org.hibernate.cfg.EJB3NamingStrategy
+    properties:
+       hibernate:
+          dialect:  org.hibernate.dialect.HANAColumnStoreDialect
+          jdbc:
+            lob:
+              lobnon_contextual_creation: true
+hana:
+  url: ${vcap.services.cfdev.credentials.url}
+  user: ${vcap.services.cfdev.credentials.user}
+  password: ${vcap.services.cfdev.credentials.password}
