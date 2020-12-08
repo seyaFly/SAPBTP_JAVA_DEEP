@@ -24,9 +24,9 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public List<Employee> findAllEmployee(){
-        List<Employee> employee = new ArrayList<>();
-        employeeRepository.findAll().forEach(employee::add);
-        return employee;
+        List<Employee> employees = new ArrayList<>();
+        employeeRepository.findAll().forEach(employees::add);
+        return employees;
     }
 
     @Override

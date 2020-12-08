@@ -51,11 +51,13 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <maven.surefire.version>2.19.1</maven.surefire.version>
         <java.version>1.8</java.version>
         <junit.version>4.12</junit.version>
         <ngbrc.version>2.3.48</ngbrc.version>
         <swagger.version>2.9.2</swagger.version>
         <cds.version>1.9.0</cds.version>
+        <maven.surefire.version>2.19.1</maven.surefire.version>
     </properties>
     <dependencies>
         <dependency>
@@ -141,8 +143,22 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <fork>true</fork>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven.surefire.version}</version>
+                <configuration>
+                    <!-- mvn test , skip running test ase-->
+                    <skipTests>true</skipTests>
                 </configuration>
             </plugin>
         </plugins>

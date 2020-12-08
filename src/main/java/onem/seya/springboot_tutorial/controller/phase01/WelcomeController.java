@@ -20,6 +20,8 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 @Api(value = ApiConstant.VERSION)
 public class WelcomeController {
 
+    public static final String welcomeMessage = "welcome to start the spring boot project in SCP Cloud Foundry";
+
     private static final Logger logger = LoggerFactory.getLogger(WelcomeController.class);
 
     @ApiOperation(value = "welcome message", nickname = "printWelcomeMessage", notes = "", response = String.class)
@@ -27,7 +29,6 @@ public class WelcomeController {
             @ApiResponse(code = 400, message = "invalid request body")})
     @GetMapping(value = "/welcome", produces = {APPLICATION_JSON_VALUE})
     public String printWelcomeMessage(){
-        String welcomeMessage = "welcome to start the spring boot project in SCP Cloud Foundry";
         logger.info("success print welcome message");
         return welcomeMessage;
     }
